@@ -30,7 +30,7 @@
 }
 
 .loading-state{
-  width: 500px;
+  width: 400px;
 }
 
 .spinner {
@@ -41,13 +41,13 @@
 .transaction-confirmation{
   display: flex;
   flex-direction: column;
-  width:500px;
+  width:400px;
   margin-left: 5%;
   line-height: 3.5vw
 }
 
 .null-state {
-  width: 500px;
+  width: 400px;
   margin-top: 30%;
   margin-left: 35%;
 }

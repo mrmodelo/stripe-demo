@@ -92,14 +92,14 @@ render() {
           elevation={0}
           className='app-bar'>
           <Toolbar>
-          <span>Zach's Gift Card Shop</span>
-          <div className='grow'></div>
-          <IconButton aria-label="cart">
-            <Badge badgeContent={cart ? cart.length : 0} color="primary" 
-                onClick={()=>this.toggleDrawer(true)}>
-              <ShoppingCartIcon  onClick={()=>this.toggleDrawer(true)}/>
-            </Badge>
-          </IconButton>
+            <span>Zach's Gift Card Shop</span>
+            <div className='grow'></div>
+            <IconButton aria-label="cart">
+              <Badge badgeContent={cart ? cart.length : 0} color="primary" 
+                  onClick={()=>this.toggleDrawer(true)}>
+                <ShoppingCartIcon  onClick={()=>this.toggleDrawer(true)}/>
+              </Badge>
+            </IconButton>
           </Toolbar>
         </AppBar>
         

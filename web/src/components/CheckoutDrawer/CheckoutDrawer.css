@@ -1,0 +1,47 @@
+.checkout-drawer-container{
+  width: 100%;
+  height: 100%;
+}
+
+.elements {
+  width:500px;
+}
+
+.line-item{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+}
+.product-name {
+  width: 60%;
+}
+.price {
+  width: 40%;
+}
+
+.title-bar{
+  margin-left: 8%;
+}
+.amount-totals{
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  font-weight: 600;
+}
+
+.loading-state{
+  width: 500px;
+}
+
+.spinner {
+  margin-left: 45%;
+  margin-top: 45%;
+}
+
+.transaction-confirmation{
+  display: flex;
+  flex-direction: column;
+  width:500px;
+  margin-left: 5%;
+  line-height: 3.5vw
+}

@@ -4,6 +4,7 @@ import {
   injectStripe
  } from 'react-stripe-elements';
 import Button from '@material-ui/core/Button';
+import './PaymentForm.css'
 
 
 class PaymentForm extends Component {
@@ -53,7 +54,8 @@ class PaymentForm extends Component {
     const {isComplete} = this.state;
 
     return (
-      <div className="cell example example1">
+      <div className='card-container'>
+        <h2>Payment Details</h2>
         <form  onSubmit={this.handleSubmit.bind(this)}>
           <fieldset>
             <div>
@@ -66,10 +68,9 @@ class PaymentForm extends Component {
           <div className="row" style={{ color: 'red' }}>
             {this.props.errorMessage}
           </div>
-          <div>
+          <div className='order-button' >
             <Button 
               disabled={!isComplete} 
-              className='order-button' 
               color="primary" 
               variant='contained' 
               type="submit" 

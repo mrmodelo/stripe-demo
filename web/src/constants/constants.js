@@ -1,4 +1,4 @@
-export const firebaseURL = 'google.com'
+export const firebaseURL = process.env.REACT_APP_FIREBASE_FUNCTION_BASE_URL
 export const productList = [
   {
     productName: '$5 Amazon Gift Card',
@@ -25,5 +25,4 @@ export const productList = [
     productImage: 'https://media-cdn.tripadvisor.com/media/photo-s/0f/1b/48/d4/logo.jpg'
   }
 ];
-//TODO:switch this and the firebase url to env variables
-export const stripeKey = 'pk_test_FQEKzJFqxR1i9r6JWUV0GBWq00eO3RvYJC'
+export const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY

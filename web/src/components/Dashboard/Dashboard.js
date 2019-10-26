@@ -78,11 +78,10 @@ render() {
         {/* Header bar with title and cart call to action */}
         <div>
         <IconButton aria-label="cart">
-          {cart && cart.length ? 
-          <Badge badgeContent={cart? cart.length : 0} color="primary" 
+          <Badge badgeContent={cart ? cart.length : 0} color="primary" 
               onClick={()=>this.toggleDrawer(true)}>
             <ShoppingCartIcon  onClick={()=>this.toggleDrawer(true)}/>
-          </Badge> : <div></div>}
+          </Badge>
         </IconButton>
         </div>
 
@@ -109,10 +108,10 @@ render() {
 
         <Drawer
           open={drawerOpen}
-          
+          onClose={()=>this.toggleDrawer(false)}
           anchor='right'
           width='50%'>
-          <StripeProvider apiKey='pk_test_FQEKzJFqxR1i9r6JWUV0GBWq00eO3RvYJC'>
+          <StripeProvider apiKey={stripeKey}>
               <CheckoutDrawer 
                 handleSuccesfullCharge={()=>this.setState({cart: []})}
                 cart={cart}

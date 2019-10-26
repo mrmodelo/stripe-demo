@@ -10,7 +10,7 @@ export const productList = [
     productName: '$10 Panera Bread Gift Card',
     productPrice: 10,
     productId: 'panera10',
-    productImage: 'http://twocafeandboutique.com/wp-content/uploads/2018/03/Panera-Bread-Logo-1.png'
+    productImage: 'https://www.nrn.com/sites/nrn.com/files/panera-logo-promo_0.gif'
   },
   {
     productName: '$15 Starbucks Gift Card',

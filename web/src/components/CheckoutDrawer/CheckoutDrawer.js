@@ -52,9 +52,10 @@ class CheckoutDrawer extends Component {
             transactionId: res.data.transactionId,
             paymentIsProcessing: false,
             receiptURL: res.data.receiptURL
-           }).then(()=>{
+           });
+           
             this.props.handleSuccesfullCharge();
-           })
+           
         }
       }).catch(err=>{
           console.log('There was an error posting the communication.')
@@ -106,7 +107,8 @@ class CheckoutDrawer extends Component {
 
   render() {    
     const {transactionId,paymentIsProcessing, receiptURL} = this.state;
-   
+    const {cart} = this.props;
+
     return (
       <div className='checkout-drawer-container'>
         {
@@ -122,7 +124,13 @@ class CheckoutDrawer extends Component {
               <CircularProgress className='spinner' color="primary" />
             </div>)       
             : 
+            cart.length ?
             this.renderCart()
+            :
+            <div className='null-state'>
+              <h2>No items in your cart.</h2>
+            </div>
+            
         }
       </div>
     );

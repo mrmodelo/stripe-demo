@@ -1,13 +1,25 @@
-.product-tile {
+/* .product-tile {
   border: 2px solid black;
   border-radius: 5px;
-  cursor: pointer;
-}
+} */
 
 .product-container{
   margin-top: 10%;
+  margin-left: 3%;
 }
 
 .page-container {
   width:100%;
+}
+
+.add-to-cart-icon{
+  color: rgba(255, 255, 255, 0.54) !important;
+}
+
+.grid-list {
+  width: 100%;
+}
+
+.grow {
+  flex-grow: 1;
 }

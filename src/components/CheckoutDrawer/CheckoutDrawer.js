@@ -5,6 +5,7 @@ import PaymentForm from '../PaymentForm/PaymentForm'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
 import {firebaseURL} from '../../constants/constants';
+import './CheckoutDrawer.css'
 
 
 
@@ -51,7 +52,7 @@ class CheckoutDrawer extends Component {
   render() {    
     const {transactionId,isProcessing} = this.state;
     return (
-      <div style={{ height: '100%' }}>
+      <div className='checkout-drawer-container'>
         {/* Loading screen for if the payment is processing */}
         {
           transactionId ? 
@@ -62,7 +63,7 @@ class CheckoutDrawer extends Component {
             isProcessing ?
             ( <CircularProgress color="primary" />)       
             : (
-            <div className="stripe-container">
+            <div className="elements">
               <Elements>
                 <PaymentForm
                   amount='600'

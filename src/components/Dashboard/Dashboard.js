@@ -72,7 +72,7 @@ renderProductList(products){
 render() {
   const {products, cart, drawerOpen} = this.state;
     return (
-      <div className='topSection'>
+      <div className='page-container'>
         <h4>Click to Add To Cart</h4>
         
         {/* Header bar with title and cart call to action */}
@@ -108,11 +108,15 @@ render() {
           />
 
         <Drawer
-          open={drawerOpen}>
+          open={drawerOpen}
+          
+          anchor='right'
+          width='50%'>
           <StripeProvider apiKey='pk_test_FQEKzJFqxR1i9r6JWUV0GBWq00eO3RvYJC'>
               <CheckoutDrawer 
                 handleSuccesfullCharge={()=>this.setState({cart: []})}
                 cart={cart}
+                className='slideout-drawer'
                 >
               </CheckoutDrawer>
           </StripeProvider>

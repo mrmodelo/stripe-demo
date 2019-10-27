@@ -12,9 +12,13 @@ View your receipt by clicking the url in your confirmation page.
 <b>Node.js</b>: What we use on the backend to perform our payment processing and server-side functionality,<br />
 <b>Firebase</b>: Hosting the application as well as our turning our server-side node code a url accesible endpoint (Firebase Functions).<br />
 
+### `Overview`
+The App is split into two sections `web` which is the front-end, and `server` which is the backend.
+
 ### `To run the code locally`
 
 You will need the `.env` file with the secret keys.<br/>
+Navigate to the `stripe-demo/web` directory. <br />
 Then run `npm install` to pull down all the necessary dependencies.<br />
 Then run `npm start` in your terminal.<br />
 Navigate to `localhost:3000`<br />

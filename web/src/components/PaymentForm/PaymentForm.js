@@ -74,9 +74,8 @@ class PaymentForm extends Component {
               color="primary" 
               variant='contained' 
               type="submit" 
-              data-tid="elements_examples.form.pay_button"
-              >
-                PLACE ORDER
+              data-tid="elements_examples.form.pay_button">
+                COMPLETE ${this.props.amount} CHARGE
               </Button>
           </div>
         </form>

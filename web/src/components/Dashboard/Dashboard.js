@@ -7,6 +7,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Snackbar from '@material-ui/core/Snackbar';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import './Dashboard.css';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { IconButton, Badge, Drawer,AppBar,Toolbar } from '@material-ui/core';
 import CheckoutDrawer from '../CheckoutDrawer/CheckoutDrawer';
 import {StripeProvider} from 'react-stripe-elements';
@@ -40,7 +41,6 @@ toggleDrawer(value){
 }
 
 handlePaymentSuccess() {
-  console.log('setting cart to 0')
   this.setState({cart: []})
 }
 
@@ -60,19 +60,16 @@ renderProductList(products){
               <img src={product.productImage} alt={product.productName} />
               <GridListTileBar
                 title={product.productName}
-                subtitle={<span>
-                  <Currency
-                    quantity={product.productPrice}
-                    currency="USD"/>
-                  </span>}
-                
+                subtitle={
+                <span>
+                  <Currency quantity={product.productPrice} currency="USD"/>
+                </span>
+                }
                 actionIcon={
                   <IconButton aria-label={`Add ${product.productName} to cart.`} className='add-to-cart-icon' onClick={()=>this.addProductToCart(product)}>
-                    <Badge badgeContent='+'color="primary" >
-                      <ShoppingCartIcon/>
-                    </Badge>
+                    <AddShoppingCartIcon/>
                   </IconButton>
-              }
+                }
               />
             </GridListTile>
           ))}
@@ -86,6 +83,8 @@ render() {
   const {products, cart, drawerOpen} = this.state;
     return (
       <div className='page-container'>
+        
+        {/* Navigation Bar with Title and Cart CTA */}
         <AppBar 
           position="static" 
           color="default"
@@ -94,10 +93,9 @@ render() {
           <Toolbar>
             <span>Zach's Gift Card Shop</span>
             <div className='grow'></div>
-            <IconButton aria-label="cart">
-              <Badge badgeContent={cart ? cart.length : 0} color="primary" 
-                  onClick={()=>this.toggleDrawer(true)}>
-                <ShoppingCartIcon  onClick={()=>this.toggleDrawer(true)}/>
+            <IconButton aria-label="cart" onClick={()=>this.toggleDrawer(true)}>
+              <Badge badgeContent={cart ? cart.length : 0} color="primary">
+                <ShoppingCartIcon  />
               </Badge>
             </IconButton>
           </Toolbar>
@@ -111,7 +109,7 @@ render() {
           }
         </div>
 
-        {/* Toggled Components */}
+        {/* Product Added to Cart Notifications */}
         <Snackbar
             anchorOrigin={{
               vertical: 'bottom',
@@ -122,22 +120,22 @@ render() {
             onClose={this.handleClose.bind(this)}
             message={<span id="message-id">Product Added To Cart</span>}
           />
-
+        
+        {/* Houses the drawer component that pops out with the cart and checkout process */}
         <Drawer
           open={drawerOpen}
           onClose={()=>this.toggleDrawer(false)}
           anchor='right'
-          width='50%'>
+          width={600}>
           <StripeProvider apiKey={stripeKey}>
-              <CheckoutDrawer 
-                handleSuccesfullCharge={()=>this.handlePaymentSuccess()}
-                cart={cart}
-                className='slideout-drawer'
-                >
-              </CheckoutDrawer>
+            <CheckoutDrawer 
+              handleSuccesfullCharge={()=>this.handlePaymentSuccess()}
+              cart={cart}
+              className='slideout-drawer'
+              >
+            </CheckoutDrawer>
           </StripeProvider>
         </Drawer>
-
       </div>
     );
   }

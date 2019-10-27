@@ -1,10 +1,10 @@
 .checkout-drawer-container{
-  width: 100%;
+  width: 45vw;
   height: 100%;
 }
 
 .elements {
-  width:500px;
+  width:100%;
 }
 
 .line-item{
@@ -20,17 +20,17 @@
 }
 
 .title-bar{
-  margin-left: 8%;
+  margin-left: 6%;
 }
 .amount-totals{
-  margin-left: 10%;
+  margin-left: 6%;
   margin-top: 2%;
   margin-bottom: 5%;
   font-weight: 600;
 }
 
 .loading-state{
-  width: 400px;
+  width: 100%;
 }
 
 .spinner {
@@ -41,13 +41,13 @@
 .transaction-confirmation{
   display: flex;
   flex-direction: column;
-  width:400px;
+  width:100%;
   margin-left: 5%;
   line-height: 3.5vw
 }
 
 .null-state {
-  width: 400px;
+  width: 100%;
   margin-top: 30%;
-  margin-left: 35%;
+  text-align:center;
 }

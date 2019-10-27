@@ -15,8 +15,8 @@ exports.completeStripePayment = functions.https.onRequest((req, res) => {
     } else {
       
       const amount = Math.floor(req.body.amount * 100); //stripe deals in 100ths, no decimals
-      const currency = 'usd';
-      const orderNumber = Math.random().toString(36).substring(7)
+      const currency = 'usd'; //defaulting to USD
+      const orderNumber = Math.random().toString(36).substring(7) //creating a unique order number
 
       stripe.charges.create({
         amount: amount,

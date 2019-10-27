@@ -39,6 +39,7 @@ class CheckoutDrawer extends Component {
       amount: this.state.subTotal
     };
     
+    //API call to our endpoint. Would eventually be pulled out of this component and triggered using a Redux action.
     axios
       .post(`${firebaseURL}/completeStripePayment`, paymentObject)
       .then(res => {
@@ -68,40 +69,37 @@ class CheckoutDrawer extends Component {
     
     return (
         <div className="elements">
-          <div className='title-bar'>
-            <h2>Cart Items</h2>
-          </div>
-
-            <ul className='cart-items'>
-              {cart.map(cartItem => (
-                <li className='line-item'>
-                  <span className='product-name'>{cartItem.productName}</span>
-                  <span className='price'>
-                    <Currency quantity={cartItem.productPrice} currency="USD"/>
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <Divider></Divider>
-    
-            <div className='amount-totals line-item'>
-              <span className='product-name'>TOTAL</span>
-              <span className='price'>
-                <Currency
-                quantity={subTotal}
-                currency="USD"/>
-              </span>
-            </div>
-          
-          <Elements>
-            <PaymentForm
-              amount='600'
-              handleResult={this.handlePayment.bind(this)}
-              errorMessage={this.props.errorMessage}
-            />
-          </Elements>
+        <div className='title-bar'>
+          <h2>Cart Items</h2>
         </div>
-        )
+        <ul className='cart-items'>
+          {cart.map(cartItem => (
+            <li key={Math.random().toString(36)} className='line-item'>
+              <span className='product-name'>{cartItem.productName}</span>
+              <span className='price'>
+                <Currency quantity={cartItem.productPrice} currency="USD"/>
+              </span>
+            </li>
+          ))}
+        </ul>
+        <Divider></Divider>
+        <div className='amount-totals line-item'>
+          <span className='product-name'>TOTAL</span>
+          <span className='price'>
+            <Currency
+            quantity={subTotal ? subTotal : 0}
+            currency="USD"/>
+          </span>
+        </div>
+        <Elements>
+          <PaymentForm
+            amount={subTotal}
+            handleResult={this.handlePayment.bind(this)}
+            errorMessage={this.props.errorMessage}
+          />
+        </Elements>
+      </div>
+    )
   }
   
 
@@ -124,13 +122,11 @@ class CheckoutDrawer extends Component {
               <CircularProgress className='spinner' color="primary" />
             </div>)       
             : 
-            cart.length ?
-            this.renderCart()
-            :
-            <div className='null-state'>
-              <h2>No items in your cart.</h2>
-            </div>
-            
+            cart.length ? this.renderCart() : (
+              <div className='null-state'>
+                <h2>No items in your cart.</h2>
+              </div>
+            )
         }
       </div>
     );

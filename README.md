@@ -7,8 +7,8 @@ Checkout by entering the stripe fake credit card `4242 4242 4242 4242 exp 04/22 
 
 ### `Technologies Used`
 
-This project leverages <br />
-<b>React</b>: lightweight, fast, and responsive way to prototype applications,<br />
+This project leverages: <br />
+<b>React</b>: Lightweight, fast, and responsive way to prototype applications,<br />
 <b>Stripe Elements</b>: Stripe-managed React components that make it incredibly easy to communicate with the Stripe API's, <br />
 <b>Node.js</b>: What we use on the backend to perform our payment processing and server-side functionality,<br />
 <b>Firebase</b>: Hosting the application as well as our turning our server-side node code a url accesible endpoint (Firebase Functions).<br />
@@ -16,6 +16,7 @@ This project leverages <br />
 ### `To run the code locally`
 
 You will need the `.env` file with the secret keys.<br/>
+Then run `npm install` to pull down all the necessary dependencies.<br />
 Then run `npm start` in your terminal.<br />
 Navigate to `localhost:3000`<br />
 

@@ -3,7 +3,8 @@ Open [https://zachbuzaidstripe.site](https://zachbuzaidstripe.site) to view it i
 
 Add items to your cart by clicking the icon in the bottom right of each tile.<br />
 View your cart by clicking the cart icon in the navigation bar.<br />
-Checkout by entering the stripe fake credit card `4242 4242 4242 4242 exp 04/22 cvc 424 zip 42424`
+Checkout by entering the stripe fake credit card `4242 4242 4242 4242 exp 04/22 cvc 424 zip 42424`<br />
+View your receipt by clicking the url in your confirmation page.
 
 ### `Technologies Used`
 <b>React</b>: Lightweight, fast, and responsive way to prototype applications,<br />

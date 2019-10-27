@@ -6,8 +6,6 @@ View your cart by clicking the cart icon in the navigation bar.<br />
 Checkout by entering the stripe fake credit card `4242 4242 4242 4242 exp 04/22 cvc 424 zip 42424`
 
 ### `Technologies Used`
-
-This project leverages: <br />
 <b>React</b>: Lightweight, fast, and responsive way to prototype applications,<br />
 <b>Stripe Elements</b>: Stripe-managed React components that make it incredibly easy to communicate with the Stripe API's, <br />
 <b>Node.js</b>: What we use on the backend to perform our payment processing and server-side functionality,<br />
